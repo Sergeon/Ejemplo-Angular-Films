@@ -112,8 +112,10 @@ Entonces simplemente movemos los estilos al nuevo componente:
 }
 ```
 
-Una vez hecho esto, tenemos una serie de problemas con el estado actual de la aplicación.
+Una vez hecho esto, tenemos la aplicación funcionando como queríamos, mostrando una tarjeta por cada película mostrando la información de la película :-D
+
+Sin embargo, hay una serie de problemas con el estado actual de la aplicación.
 
  - Por un lado, los listados de directores y de protagonistas son arrays, y los estamos mostrando directamente, por lo que no están bien formateados. Para formatearlos correctamente, y de paso separar al protagonista principal de cada película de los secundarios, crearemos **pipes** de Angular. Eso se puede comprobar en la rama `pipes` de este mismo repositorio.
 
- - Por otro lado, algunas cosas de este ejemplo no son correctas. Los componentes están declarados directamente por `app.module`, cuando lo correcto sería tener un módulo específico para cada dominio de nuestra aplicación. Además, estamos definiendo los films con el tipo `any` de typescript, lo cual no nos ayuda a detectar posibles errores ni permite que el editor nos sea de mucho utilidad al trabajar con los films. Estos problemas los resolveremos en otro proyecto, que se va a denominar **Ejemplo-Angular-Users**, donde crearemos un proyecto de ejemplo muy similar pero donde atajaremos estos problemas.
+ - Por otro lado, algunas cosas de este ejemplo no son correctas. Los componentes están declarados directamente por `app.module`, cuando lo correcto sería tener un módulo específico para cada dominio de nuestra aplicación. Además, estamos definiendo los films con el tipo `any` de typescript, lo cual no nos ayuda a detectar posibles errores ni permite que el editor nos sea de mucho utilidad al trabajar con los films. Estos problemas los resolvemos en [este otro repositorio](https://github.com/Sergeon/Ejemplo-Angular-users), donde tenemos un proyecto de ejemplo muy similar pero donde usamos tipos de typescript para controlar nuestros modelos de datos.
