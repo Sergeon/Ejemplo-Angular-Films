@@ -1,3 +1,11 @@
-<p>
-  {{ films | json }}
-</p>
+<div class="films-wrapper">
+  <div class="film" *ngFor="let film of films">
+    <p>nombre: {{film.name}}</p>
+    <p>directores: {{film.directors}}</p>
+    <p>protagonistas: {{film.stars}}</p>
+
+    <img [src]="film.frontImg">
+
+  </div>
+
+</div>

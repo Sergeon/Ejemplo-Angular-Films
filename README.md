@@ -61,3 +61,28 @@ export class FilmsListComponent implements OnInit {
   {{ films | json }}
 </p>
 ```
+
+Al fijar `this.films = films` permitimos que el html del componente pueda acceder a la variable `films`.
+
+Una vez hecho esto, lo que queremos es mostrar la información de cada película en `films-list.component.html`. Para ello, utilizaremos la directiva `ngFor` de Angular para generar un trozo de html para cada película:
+
+`films-list.component.html`:
+
+```html
+<div class="films-wrapper">
+  <div class="film" *ngFor="let film of films">
+    <p>nombre: {{film.name}}</p>
+    <p>directores: {{film.directors}}</p>
+    <p>protagonistas: {{film.stars}}</p>
+
+    <img [src]="film.frontImg">
+
+  </div>
+
+</div>
+```
+
+Algunas cosas importantes a notar son las siguientes:
+ - Para poder acceder a la variable `film` en un atributo html, debemos especificar el atributo entre `[]`, como en el caso de **src** en la imagen.
+ - Cuando declaramos `*ngFor`, debemos recordar usar **of** en vez de **in**: de lo contrario obtendremos un mensaje de error que no es muy claro y no nos ayuda mucho a depurar el problema.
+    
