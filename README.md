@@ -10,3 +10,11 @@ En este caso, habrá dos ramas, `listado` y `tarjetas`. En la primera, se render
 Además, una tercera rama, `pipes`, demostrará como usar *pipes* de Angular para formatear la salida de algunos campos.
 
 **Nota que en la rama master no hay nada, a parte de este aviso. Cambia de rama para ver el ejercicio.**
+
+Recuerda que para ejecutar la aplicación, antes de arrancarla, debes ejecutar:
+
+`npm install`
+
+Para instalar las dependencias del proyecto. Después,
+
+`npm start` levantará la aplicación en `http://localhost:4200`.
