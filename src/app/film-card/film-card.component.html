@@ -1,7 +1,8 @@
 <div class="film">
   <h1>{{film.name}}</h1>
-  <p>directores: {{film.directors}}</p>
-  <p>protagonistas: {{film.stars}}</p>
+  <p>directores: {{film.directors | list }}</p>
+  <p>protagonista: {{film.stars | main }}</p>
+  <p>protagonistas: {{film.stars | supportives:1 }}</p>
   <p>Puntuación: {{film.rate}}</p>
 
   <img [src]="film.frontImg">
