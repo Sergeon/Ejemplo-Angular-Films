@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { films } from './../films.service';
 
 @Component({
   selector: 'app-films-list',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilmsListComponent implements OnInit {
 
+
+  films: any;
   constructor() { }
 
   ngOnInit() {
+    this.films = films;
   }
 
 }
