@@ -6,3 +6,5 @@ Todos los repositorios de ejemplos del curso tienen varias ramas, cada una con e
 en un momento dado. Además, el fichero `README.md` en cada una de las ramas mostrará los pasos a seguir para poder realizar el proyecto.
 
 En este caso, habrá dos ramas, `listado` y `tarjetas`. En la primera, se renderiza el listado de películas con un solo componente, el `films-list`, mientras que en la segunda, que contendrá el ejercicio resuelto, cada tarjeta con la información de una película.
+
+**Nota que en la rama master no hay nada, a parte de este aviso. Cambia de rama para ver el ejercicio.**
