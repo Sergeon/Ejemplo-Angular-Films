@@ -7,4 +7,6 @@ en un momento dado. Además, el fichero `README.md` en cada una de las ramas mos
 
 En este caso, habrá dos ramas, `listado` y `tarjetas`. En la primera, se renderiza el listado de películas con un solo componente, el `films-list`, mientras que en la segunda, que contendrá el ejercicio resuelto, cada tarjeta con la información de una película.
 
+Además, una tercera rama, `pipes`, demostrará como usar *pipes* de Angular para formatear la salida de algunos campos.
+
 **Nota que en la rama master no hay nada, a parte de este aviso. Cambia de rama para ver el ejercicio.**
