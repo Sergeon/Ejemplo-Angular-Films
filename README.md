@@ -71,18 +71,57 @@ Una vez hecho esto, lo que queremos es mostrar la información de cada película
 ```html
 <div class="films-wrapper">
   <div class="film" *ngFor="let film of films">
-    <p>nombre: {{film.name}}</p>
+    <h1>{{film.name}}</h1>
     <p>directores: {{film.directors}}</p>
     <p>protagonistas: {{film.stars}}</p>
+    <p>Puntuación: {{film.rate}}</p>
 
     <img [src]="film.frontImg">
 
   </div>
 
 </div>
+
 ```
 
 Algunas cosas importantes a notar son las siguientes:
  - Para poder acceder a la variable `film` en un atributo html, debemos especificar el atributo entre `[]`, como en el caso de **src** en la imagen.
  - Cuando declaramos `*ngFor`, debemos recordar usar **of** en vez de **in**: de lo contrario obtendremos un mensaje de error que no es muy claro y no nos ayuda mucho a depurar el problema.
-    
+
+
+ Una vez que estamos mostrando la lista de películas, vamos a darle un poco de estilo. Para ello, tenemos dos opciones, utilizar el `.css` del componente, el fichero `src/app/films-list.component.css`, o utilizar el fichero de estilos general, `styles.css`. 
+
+ La diferencia fundamental es que el `.css` del componente tiene *shadow css*. Los estilos que definamos en ese fichero no van a aplicarse a lo que quede fuera del componente, tanto por arriba como por abajo -es decir, no va a afectar a componentes hijos-.
+
+ Por otro lado, siempre hay que tener presente que `styles.css` se carga como estilo global de toda la aplicación porque está así definido en el fichero `.angular-cli.json`, en el campo `styles`. Podríamos añadir más hojas de estilo, cambiar el nombre de nuestra hoja de estilo global o incluso usar sass en vez de css sin problema.
+
+ En este ejemplo, añadiremos los estilos al propio componente:
+
+ `src/app/films-list.component.css`:
+
+ ```css
+ .film{
+    margin: 100px;
+    padding: 30px;
+    text-align: center;
+    background-color : lightseagreen;
+    color : white;
+    border-radius: 7px;
+}
+
+.film p{
+    font-size : 16px;
+}
+
+.film img{
+    width: 120px;
+    margin: auto;
+    display: block;
+}
+ ```
+
+ ¡Bien! En este punto ya tenemos nuestro listado de películas correctamente formateado y renderizado.
+
+ El siguiente paso es tener un componente específico que se preocupe únicamente de renderizar cada película, y separar así la responsabilidad de iterar sobre cada película, que será del componente `films-list`, y la de mostrar el detalle de cada película, que será responsabilidad de `film-card`. Para ver este desarrollo, comprueba la rama `tarjetas` del repositorio.
+
+
