@@ -12,7 +12,7 @@ Ahora queremos formatear la salida de los protagonistas o los directores para qu
 
 Muestre un listado con un espacio detrás de cada coma:
 
-'Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss.
+'Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss'.
 
 En javascript, y por tanto en typescript, para separar elementos de un array como una cadena de texto con un separador dado, podemos utilizar simplemente el método `join`:
 
@@ -49,16 +49,16 @@ export class ListPipe implements PipeTransform {
 
  ```
 
- Aquí lo importante es que nuestro objeto define una función `transform` que toma por parámetro el valor que queremos formatear y devuelve el valor formateado. Además, en los metadatos de la clase, definidos en el decorador `@Pipe`, fijamos un campo `name`. Éste es el que determina como vamos a usar el pipe en el html. En este caso, dado que el `name` es 'list', usaríamos ese nombre. Por ejemplo:
+ Aquí lo importante es que nuestro pipe define una función `transform` que toma por parámetro el valor que queremos formatear y devuelve el valor formateado. Además, en los metadatos de la clase, definidos en el decorador `@Pipe`, fijamos un campo `name`. Éste es el que determina como vamos a usar el pipe en el html. En este caso, dado que el `name` es 'list', usaríamos ese nombre. Por ejemplo:
 
  ```html
-  <p>Protagonistas: {{ film.stars || list }}</p>
+  <p>Protagonistas: {{ film.stars | list }}</p>
  ```
 
  Además, en la función `transform` tenemos un segundo parámetro, `args`, que indica los parámetros que pasamos al pipe. Para pasar parámetros al pipe se utilizan dos puntos:
 
   ```html
-  <p>Protagonistas: {{ film.stars || list:23 }}</p>
+  <p>Protagonistas: {{ film.stars | list:23 }}</p>
  ```
 
  (*Recuerda que, en tipescript, el carácter `?` detrás de un parámetro implica que el parámetro que estamos pasando es opcional.*)
@@ -111,6 +111,7 @@ export class ListPipe implements PipeTransform {
  Igual que hemos hecho antes, creamos los nuevos pipes con `angular-cli`:
 
  `npm run ng -- g pipe main`
+
  `npm run ng -- g pipe supportives`
 
  El primer pipe, `main`, debe simplemente devolver el primer elemento del array:
@@ -137,7 +138,7 @@ export class MainPipe implements PipeTransform {
     return value.slice(1).join(', ');
   }
  ```
-Pero esto siempre eliminará un solo elemento al principio del array. ya que tenemos disponible la variable `args`, podemos modificar el código un poco para permitir que el cliente del pipe pueda elegir cuantos elementos quiere eliminar al principio del array. Para ello, modificamos la función `transform`, de tal modo que quede como sigue:
+Pero esto siempre eliminará un solo elemento al principio del array. Ya que tenemos disponible la variable `args`, podemos modificar el código un poco para permitir que el cliente del pipe pueda elegir cuantos elementos quiere eliminar al principio del array. Para ello, modificamos la función `transform`, de tal modo que quede como sigue:
 
 ```typescript
 import { Pipe, PipeTransform } from '@angular/core';
