@@ -1,0 +1,18 @@
+.film{
+    margin: 100px;
+    padding: 30px;
+    text-align: center;
+    background-color : lightseagreen;
+    color : white;
+    border-radius: 7px;
+}
+
+.film p{
+    font-size : 16px;
+}
+
+.film img{
+    width: 120px;
+    margin: auto;
+    display: block;
+}

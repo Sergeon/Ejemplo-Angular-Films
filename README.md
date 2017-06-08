@@ -85,5 +85,29 @@ Una vez que tenemos esto configurado, debemos modificar el html de `films-list` 
 
 Al añadir la parte `[film]="film"` estamos indicando que la variable `film` del componente card es igual al `film` que en cada caso esté referenciando el `ngFor`.
 
+Llegados a este punto, tenemos nuestro componente `film-card` funcionando correctamente, pero ha perdido los estilos porque los teníamos en el componente `films-list`, que no puede afectar al componente `film-card` por el tema del 'shadow css'.
 
+Entonces simplemente movemos los estilos al nuevo componente:
 
+`src/app/film-card.component.css`:
+
+```css
+.film{
+    margin: 100px;
+    padding: 30px;
+    text-align: center;
+    background-color : lightseagreen;
+    color : white;
+    border-radius: 7px;
+}
+
+.film p{
+    font-size : 16px;
+}
+
+.film img{
+    width: 120px;
+    margin: auto;
+    display: block;
+}
+```
