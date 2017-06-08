@@ -1,4 +1,4 @@
-<div class="films-wrapper">
+<!--<div class="films-wrapper">
   <div class="film" *ngFor="let film of films">
     <h1>{{film.name}}</h1>
     <p>directores: {{film.directors}}</p>
@@ -9,4 +9,9 @@
 
   </div>
 
+</div>-->
+
+
+<div class="films-wrapper">
+  <app-film-card *ngFor="let film of films"  [film]="film"></app-film-card>
 </div>
